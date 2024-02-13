@@ -1,0 +1,12 @@
+<div>
+    <!-- Input para adicionar nova tarefa -->
+    <input type="text" [(ngModel)]="descricaoNovaTarefa" placeholder="Nova Tarefa">
+    <button (click)="addTarefa()">Adicionar</button>
+  </div>
+  
+  <!-- Lista de tarefas -->
+  <ul>
+    <li *ngFor="let tarefa of tarefas">
+      {{ tarefa.descricao }}
+    </li>
+  </ul>
