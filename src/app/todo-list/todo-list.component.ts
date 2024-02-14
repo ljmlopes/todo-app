@@ -22,6 +22,20 @@ export class TodoListComponent {
       this.descricaoNovaTarefa = ''; // Limpar o campo de entrada
       this.tarefas = this.tarefaService.getTarefas(); // Atualizar a lista de tarefas exibida
   }
+  }
+
+  delTarefa(id?: number){
+    if(id != undefined){
+    this.tarefaService.delTarefa(id)
+    this.tarefaService.getTarefas()
+    }
+  }
+
+  concluirTarefa(id?: number){
+    if(id != undefined){
+      this.tarefaService.concluirTarefa(id)
+      }
+  }
 
 }
-}
+

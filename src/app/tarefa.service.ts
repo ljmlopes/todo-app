@@ -16,6 +16,20 @@ export class TarefaService {
     this.tarefas.push(novaTarefa)
   }
 
+  public delTarefa(id?: number): void{
+    const index = this.tarefas.findIndex(tarefa => tarefa.id === id)
+    if(index != -1){
+      this.tarefas.splice(index, 1)
+    }
+  }
+
+  public concluirTarefa(id?: number): void{
+    const index = this.tarefas.findIndex(tarefa => tarefa.id === id)
+    if(index != -1){
+      this.tarefas[index].concluida = true
+    }
+  }
+
   public getTarefas():Tarefa[]{
     return this.tarefas
   }

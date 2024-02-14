@@ -1,12 +1,14 @@
 <div>
     <!-- Input para adicionar nova tarefa -->
     <input type="text" [(ngModel)]="descricaoNovaTarefa" placeholder="Nova Tarefa">
-    <button (click)="addTarefa()">Adicionar</button>
+    <button (click)="addTarefa()">Adicionar</button> 
   </div>
   
   <!-- Lista de tarefas -->
   <ul>
     <li *ngFor="let tarefa of tarefas">
       {{ tarefa.descricao }}
+      <span (click)="delTarefa(tarefa.id)" style="cursor: pointer;"> &#10006; </span> <!-- Adicionando o ícone de exclusão -->
+      <span [ngClass]="{'concluida': tarefa.concluida}" (click)="concluirTarefa(tarefa.id)" style="cursor: pointer;">&#10004;</span> <!-- Adicionando o ícone de tarefa concluída -->
     </li>
   </ul>
